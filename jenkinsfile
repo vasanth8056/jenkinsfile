@@ -14,6 +14,8 @@ pipeline {
                 sh 'sudo docker images'
             }
         }
+
+stage 123
            stage('Deploy the build'){
             steps {
                 sh 'sudo docker run -d -it --name MYAPP3 -p 77:8001 learnitguide/busapp'
