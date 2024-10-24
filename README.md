@@ -1,1 +1,4 @@
 # jenkinsfile
+
+
+add the command
