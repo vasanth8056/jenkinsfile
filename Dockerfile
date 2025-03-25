@@ -4,8 +4,11 @@ FROM ubuntu:latest
 # Set the working directory
 WORKDIR /app
 
-# Create a script that prints "Hello World"
-RUN echo 'echo "Hello World"' > hello.sh && chmod +x hello.sh
+# Copy your script into the container
+COPY hello.sh .
 
-# Run the script
+# Make sure your script is executable
+RUN chmod +x hello.sh
+
+# Run your script when the container starts
 CMD ["./hello.sh"]
