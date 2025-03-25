@@ -1,14 +1,11 @@
-version: 2.1
+# Use an official base image
+FROM ubuntu:latest
 
-jobs:
-  hello-job:
-    docker:
-      - image: cimg/python:3.8  # Use a Python Docker image
-    steps:
-      - checkout  # Check out the code in the project directory
-      - run: echo "Hello World"  # Run the command to print "Hello World"
+# Set the working directory
+WORKDIR /app
 
-workflows:
-  my-workflow:
-    jobs:
-      - hello-job
+# Create a script that prints "Hello World"
+RUN echo 'echo "Hello World"' > hello.sh && chmod +x hello.sh
+
+# Run the script
+CMD ["./hello.sh"]
