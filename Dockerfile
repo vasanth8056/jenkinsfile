@@ -1,14 +1,11 @@
-# Use an official base image
-FROM ubuntu:latest
-
-# Set the working directory
-WORKDIR /app
-
-# Copy your script into the container
-COPY hello.sh .
-
-# Make sure your script is executable
-RUN chmod +x hello.sh
-
-# Run your script when the container starts
-CMD ["./hello.sh"]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+</body>
+</html>
