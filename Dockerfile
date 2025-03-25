@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
-</head>
-<body>
-    <h1>Hello World!</h1>
-</body>
-</html>
+# Use the official Nginx image as a base
+FROM nginx:alpine
+
+# Copy the HTML file into the Nginx server's default directory
+COPY index.html /usr/share/nginx/html/
+
+# Expose port 80 to allow external access
+EXPOSE 80
+
+# Command to run Nginx in the foreground
+CMD ["nginx", "-g", "daemon off;"]
